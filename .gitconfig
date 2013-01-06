@@ -1,0 +1,13 @@
+[user]
+	name = Giovanni Toraldo
+	email = me@gionn.net
+[core]
+	autocrlf = input
+	editor = vim
+[color]
+	ui = true
+[push]
+	default = current
+[giggle]
+	history-view-vpane-position = 284
+	main-window-view = HistoryView
