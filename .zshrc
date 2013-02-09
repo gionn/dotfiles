@@ -30,12 +30,14 @@ alias knife='nocorrect knife'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git debian command-not-found github symfony2 nvm knife history-substring-search)
+plugins=(git debian command-not-found github symfony2 nvm knife history-substring-search rbenv vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/home/scorp/Applicazioni/one/share/ec2-api-tools/bin:/home/scorp/Applicazioni/one/bin:/home/scorp/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/sbin:/sbin
 export EDITOR=vim
+
+# rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
