@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 " My bundles here:
@@ -37,7 +37,7 @@ color solarized
 set mouse=a
 
 set tabstop=4 shiftwidth=4 expandtab
-set hlsearch
 
+set hlsearch
 highlight ExtraWhitespace ctermbg=darkred
 match ExtraWhitespace /\s\+$/
