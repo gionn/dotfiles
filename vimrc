@@ -18,6 +18,7 @@ Bundle 'scrooloose/syntastic'
 
 Bundle 'myusuf3/numbers.vim'
 set number "required for vim 7.4
+set regexpengine=1 "mitigate vim 7.4 weird performance regression"
 
 Bundle 'kien/ctrlp.vim'
 
