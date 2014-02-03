@@ -10,6 +10,8 @@ Bundle 'gmarik/vundle'
 " Vundle plugin list:
 
 Bundle 'tpope/vim-fugitive'
+Bundle 'airblade/vim-gitgutter'
+map <C-d> :GitGutterLineHighlightsToggle<CR>
 
 Bundle 'scrooloose/nerdtree'
 map <C-e> :NERDTreeToggle<CR>
