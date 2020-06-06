@@ -37,7 +37,7 @@ for_window [class="Gnome-calculator"] floating enable
 bindsym $mod+Return exec alacritty
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 bindsym $mod+button2 kill
 
 # start dmenu (a program launcher)
