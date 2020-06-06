@@ -1,0 +1,84 @@
+general {
+        output_format = "i3bar"
+        colors = true
+        markup = pango
+        interval = 1
+}
+
+order += "wireless wlp0s20f3"
+order += "battery 0"
+order += "cpu_temperature 0"
+order += "cpu_usage"
+order += "load"
+order += "memory"
+order += "disk /"
+order += "disk /home"
+order += "volume master"
+order += "tztime local"
+
+battery 0 {
+        format = "%status %percentage %remaining"
+        format_down = "No battery"
+        status_chr = "⚡CHR"
+        status_bat = "🔋 BAT"
+        status_unk = "? UNK"
+        status_full = "☻"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 30
+        threshold_type = time
+}
+
+cpu_usage {
+        format = "CPU: %usage"
+        degraded_threshold = 60
+        format_above_degraded_threshold = "CPU: %usage ⚠️"
+        max_threshold = 80
+        format_above_threshold = "CPU: %usage 🔥"
+}
+
+cpu_temperature 0 {
+        format = "Temp: %degrees °C"
+        format_above_threshold = "Temp: %degrees °C 🌡️"
+        path = "/sys/class/thermal/thermal_zone0/temp"
+        max_threshold = 60
+}
+
+load {
+        format = "Load: %5min"
+}
+
+memory {
+        format = "Mem: %percentage_used"
+        format_degraded = "Mem: %percentage_used 🔥"
+        threshold_degraded = 10%
+        threshold_critical = 5%
+}
+
+disk "/" {
+        format = "/ %free"
+        separator = false
+}
+
+disk "/home" {
+        format = "/home %free"
+}
+
+wireless wlp0s20f3 {
+        format_up = "📡 %essid Q=%quality (%bitrate)"
+        format_down = "offline"
+        format_quality = "%02d%s"
+}
+
+volume master {
+        format = "♪ %volume"
+        format_muted = "Muted"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+tztime local {
+		format = "%time"
+		format_time = "%Y-%m-%d %H:%M:%S"
+}
+
