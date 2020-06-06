@@ -20,7 +20,6 @@ Bundle 'scrooloose/syntastic'
 
 Bundle 'myusuf3/numbers.vim'
 set number "required for vim 7.4
-set regexpengine=1 "mitigate vim 7.4 weird performance regression"
 
 Bundle 'kien/ctrlp.vim'
 
@@ -46,10 +45,9 @@ let mapleader = ","
 " See https://github.com/sigurdga/gnome-terminal-colors-solarized
 set background=dark
 set t_Co=16
-color solarized
 
 " Add mouse support
-set mouse=a
+"set mouse=a
 
 " Configure spaces and avoid tabs
 set tabstop=4 shiftwidth=4 expandtab
