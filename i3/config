@@ -120,6 +120,9 @@ bar {
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
 
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+
 # Lock screen
 bindsym $mod+l exec i3lock -i ~/Pictures/magnus-engo-mbXEkW5ZyBQ-unsplash.png && xset dpms force off
 
