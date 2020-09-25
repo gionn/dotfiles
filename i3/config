@@ -132,6 +132,12 @@ bindsym $mod+p exec i3lock -i ~/Pictures/magnus-engo-mbXEkW5ZyBQ-unsplash.png &&
 # Grab a screenshot
 bindsym Print exec gnome-screenshot -i
 
+assign [class="Firefox"] 2
+assign [class="Slack"] 3
+assign [class="teams-for-linux"] 3
+assign [class="Code"] 4
+assign [class="jetbrains-idea"] 5
+
 # Enable led on my keyboard
 exec_always --no-startup-id xset led on
 
