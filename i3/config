@@ -13,6 +13,7 @@ floating_modifier $mod
 for_window [class="zoom"] floating enable
 for_window [class="Telegram"] floating enable
 for_window [class="Gnome-calculator"] floating enable
+for_window [class="MEGAsync"] floating enable
 
 # start my terminal
 bindsym $mod+Return exec alacritty
