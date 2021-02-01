@@ -148,7 +148,7 @@ exec_always --no-startup-id feh --bg-fill ~/MEGAsync/pictures/wallpapers/mario-w
 exec --no-startup-id xset dpms 0 0 300
 
 # Start clipboard manager
-exec --no-startup-id clipit
+exec --no-startup-id xfce4-clipman
 
 # Start network manager applet
 exec --no-startup-id nm-applet
