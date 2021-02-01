@@ -130,7 +130,7 @@ bindsym $mod+l exec i3lock -i ~/Pictures/magnus-engo-mbXEkW5ZyBQ-unsplash.png &&
 bindsym $mod+p exec i3lock -i ~/Pictures/magnus-engo-mbXEkW5ZyBQ-unsplash.png && sudo s2ram
 
 # Grab a screenshot
-bindsym Print exec gnome-screenshot -i
+bindsym Print exec flameshot gui
 
 assign [class="Firefox"] 2
 assign [class="Slack"] 3
