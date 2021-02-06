@@ -1,0 +1,8 @@
+configuration {
+  modi: "window,drun,ssh,combi";
+  font: "hack 24";
+  combi-modi: "window,drun,ssh";
+  show-icons: true;
+ }
+
+@import "/usr/share/rofi/themes/blue.rasi"

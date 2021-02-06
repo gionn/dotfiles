@@ -22,8 +22,8 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 bindsym $mod+button2 kill
 
-# program launcher
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# program launcher (i3-dmenu-desktop, rofi)
+bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # change focus
 bindsym $mod+Left focus left
