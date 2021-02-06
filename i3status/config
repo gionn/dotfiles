@@ -32,15 +32,15 @@ battery 0 {
 }
 
 cpu_usage {
-        format = "CPU: %usage"
+        format = "CPU: %usage 🐶"
         degraded_threshold = 60
         format_above_degraded_threshold = "CPU: %usage ⚠️"
-        max_threshold = 80
-        format_above_threshold = "CPU: %usage 🔥"
+        max_threshold = 99
+        format_above_threshold = "CPU: MAX 🔥"
 }
 
 cpu_temperature 0 {
-        format = "Temp: %degrees °C"
+        format = "T: %degrees °C"
         format_above_threshold = "Temp: %degrees °C 🌡️"
         path = "/sys/class/thermal/thermal_zone0/temp"
         max_threshold = 60
@@ -53,8 +53,8 @@ load {
 memory {
         format = "Mem: %percentage_used"
         format_degraded = "Mem: %percentage_used 🔥"
-        threshold_degraded = 10%
-        threshold_critical = 5%
+        threshold_degraded = 20%
+        threshold_critical = 10%
 }
 
 disk "/" {
@@ -73,7 +73,7 @@ wireless wlp0s20f3 {
 }
 
 volume master {
-        format = "♪ %volume"
+        format = "🔊 %volume"
         format_muted = "Muted"
         device = "default"
         mixer = "Master"
