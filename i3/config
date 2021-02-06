@@ -132,6 +132,9 @@ bar {
     }
 }
 
+# Avoid window border when a single window is present
+hide_edge_borders smart
+
 # Pulseaudio volume control with keyboard multimedia keys
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% # increase sound volume
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% # decrease sound volume
