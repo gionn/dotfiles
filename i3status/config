@@ -3,6 +3,9 @@ general {
         colors = true
         markup = pango
         interval = 1
+        color_bad = "#D70A53"
+        color_good = "#75DD0A"
+        color_degraded = "#F5B70B"
 }
 
 order += "wireless wlp0s20f3"
