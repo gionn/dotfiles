@@ -1,8 +1,9 @@
 configuration {
-  modi: "window,drun,ssh,combi";
+  modi: "window,run,drun,ssh,combi";
   font: "hack 24";
-  combi-modi: "window,drun,ssh";
+  combi-modi: "window,run,drun,ssh";
   show-icons: true;
+  terminal: "alacritty";
  }
 
 @import "/usr/share/rofi/themes/blue.rasi"
