@@ -1,7 +1,7 @@
 configuration {
   modi: "window,run,drun,ssh,combi";
   font: "hack 24";
-  combi-modi: "window,run,drun,ssh";
+  combi-modi: "window,drun,run,ssh";
   show-icons: true;
   terminal: "alacritty";
  }
