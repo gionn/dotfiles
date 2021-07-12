@@ -176,4 +176,4 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 
 # Run compositor to enable transparent windows and dim inactive windows
-exec --no-startup-id compton -CGb --inactive-dim 0.2 --mark-ovredir-focused
+exec --no-startup-id unagi
