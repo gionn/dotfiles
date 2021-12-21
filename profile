@@ -36,3 +36,10 @@ fi
 
 # VLC & intel BUG - crash at startup
 export MESA_LOADER_DRIVER_OVERRIDE=i965
+
+# environment customization
+export LESS="-R"
+export EDITOR="vim"
+
+# aliases
+alias yay='sudo apt-get -q update && sudo apt -q dist-upgrade -y && sudo apt -qq autoremove -y && sudo apt -qq clean && sudo snap refresh'
