@@ -5,6 +5,7 @@
 [core]
 	autocrlf = input
 	editor = vim
+	excludesfile = /home/gionn/.gitignore
 [color]
 	ui = true
 [push]
