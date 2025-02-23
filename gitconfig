@@ -13,3 +13,13 @@
 [giggle]
 	history-view-vpane-position = 284
 	main-window-view = HistoryView
+[pull]
+	rebase = true
+[init]
+	defaultBranch = master
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[rebase]
+	autoStash = true
