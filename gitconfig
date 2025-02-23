@@ -1,25 +1,68 @@
 [user]
 	name = Giovanni Toraldo
 	email = me@gionn.net
-	signingkey = /home/gionn/.ssh/id_ed25519.pub
+	signingkey = ~/.ssh/id_ed25519.pub
+
 [core]
 	autocrlf = input
 	editor = vim
-	excludesfile = /home/gionn/.gitignore
+	excludesfile = ~/.gitignore
+
 [color]
 	ui = true
+
 [push]
 	default = current
+	autoSetupRemote = true
+	followTags = true
+
 [giggle]
 	history-view-vpane-position = 284
 	main-window-view = HistoryView
+
 [pull]
 	rebase = true
+
 [init]
 	defaultBranch = master
+
 [gpg]
 	format = ssh
+
 [commit]
 	gpgsign = true
+	verbose = true
+
 [rebase]
 	autoStash = true
+	autoSquash = true
+	updateRefs = true
+
+# most of below are coming from:
+# https://blog.gitbutler.com/how-git-core-devs-configure-git/
+
+[merge]
+    conflictstyle = zdiff3
+
+[column]
+	ui = auto
+
+[branch]
+	sort = -committerdate
+
+[tag]
+	sort = version:refname
+
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+
+[help]
+	autocorrect = prompt
