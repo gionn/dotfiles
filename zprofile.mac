@@ -63,4 +63,5 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
 fi
 
 # https://github.com/ansible/ansible/issues/32499#issuecomment-343307272
-OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
