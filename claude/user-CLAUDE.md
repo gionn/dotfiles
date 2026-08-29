@@ -36,6 +36,10 @@ Add the Jira ID at the end of the PR body in plaintext (no link) — again, only
 
 Assume an experienced reader. Before writing any comment, apply one test: does it tell the reader something they can't already see by reading the code in front of them? If not, delete it — regardless of length. This rules out explaining intent the code already makes obvious, narrating what the code does, and comparing against a prior or alternative implementation that isn't there anymore — a reader who never saw that version has no context for the comparison, and it belongs in the commit message or PR description, not the source. The only exception is something genuinely surprising that the *current* code cannot convey on its own — a non-obvious external constraint or footgun a future editor would otherwise trip on — and even then, keep it to one line.
 
+## Writing style
+
+Before sending any prose I write for you or into a repo — PR descriptions, commit messages, comments, docs — run it through the `humanizer` skill (https://raw.githubusercontent.com/blader/humanizer/refs/heads/main/SKILL.md) to strip AI writing tells, then return only the final text.
+
 ## Worktrees
 
 When creating a worktree, give it a short descriptive name based on the task (e.g. the Jira ID, or a few kebab-case words summarizing the change) instead of a random/generated name. If there isn't enough context yet to derive a meaningful name, ask rather than autogenerating one.
