@@ -24,6 +24,10 @@ Prefix the PR title with the Jira ID, e.g. `OPSEXP-1234 <title>`. (This applies 
 
 When pushing additional commits to an already-open PR, check whether they're more than a minor tweak (e.g. they change the approach, drop or add scope, fix a mistake in earlier commits on the same PR). If so, update the PR title and description to match what the branch now does — don't leave them describing only the original commits once the PR has drifted from that description. Skip this while the outcome of the new commits is still unknown — e.g. a speculative push just to trigger CI and see what comes back. Update once the result is in and the final state of the branch is clear, not before.
 
+After raising a draft PR, monitor CI until the first workflow run finishes; on failure, investigate and propose a fix. Once ready for review, watch for review comments, reason about each, and ask me which to address, unless trivial and safe to fix outright.
+
+After pushing review fixes, monitor CI again. If Copilot left more than 3 review comments, request a fresh Copilot review automatically, but only once per PR; after that, ask before requesting another.
+
 ## GitHub PR descriptions
 
 Do not insert manual line breaks within sentences or paragraphs. Write prose as single long lines and let GitHub's renderer wrap automatically. Only use newlines for genuine paragraph breaks, list items, or code blocks.
