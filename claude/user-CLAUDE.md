@@ -38,6 +38,8 @@ Do not append a "Generated with Claude Code" footer or any attribution link to P
 
 Add the Jira ID at the end of the PR body in plaintext (no link) — again, only for Alfresco/Hyland org repos.
 
+Describe the PR's current end state, not its commit-by-commit evolution. Avoid phrasing like "this also fixes...", "drops the special case that...", or attributing changes to review feedback — state what the code does now, as if it were written that way from the start.
+
 ## Code comments
 
 Write self-documenting code — clear names and structure over comments explaining them. Assume an experienced reader. Before writing any comment, apply one test: does it tell the reader something they can't already see by reading the code in front of them? If not, delete it — regardless of length. This rules out explaining intent the code already makes obvious, narrating what the code does or what changed, and comparing against a prior or alternative implementation that isn't there anymore — a reader who never saw that version has no context for the comparison, and it belongs in the commit message or PR description, not the source. The only exception is something genuinely surprising that the *current* code cannot convey on its own — a non-obvious external constraint or footgun a future editor would otherwise trip on — and even then, keep it to one physical line, not a wrapped block. If the explanation doesn't fit on one line, compress it rather than spanning multiple `#`/`//` lines — a multi-line comment is a sign the explanation belongs in the commit message instead.
