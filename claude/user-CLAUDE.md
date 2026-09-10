@@ -44,16 +44,6 @@ Add the Jira ID at the end of the PR body in plaintext (no link) — again, only
 
 Describe the PR's current end state, not its commit-by-commit evolution. Avoid phrasing like "this also fixes...", "drops the special case that...", or attributing changes to review feedback — state what the code does now, as if it were written that way from the start.
 
-## Code comments
-
-Comments only where code needs clarification — never narration.
-
-Average comments should fit one line (80 columns); if really important, 3 lines is the hard limit.
-
-If it doesn't fit in 3 lines, it belongs in the commit message or PR description, not the source.
-
-A comment must never describe a decision's status ("still open", "not yet decided"), reference what a previous version did, or explain why a value differs from an earlier PR — that's history, not a constraint on the code as it stands today, and belongs in the commit message, never the comment.
-
 ## Writing style
 
 Before sending any prose I write for you or into a repo — PR descriptions, commit messages, comments, docs — run it through the `humanizer` skill (https://raw.githubusercontent.com/blader/humanizer/refs/heads/main/SKILL.md) to strip AI writing tells, then return only the final text.
