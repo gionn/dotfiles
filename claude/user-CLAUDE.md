@@ -68,6 +68,10 @@ Always SHA-pin third-party actions (`uses: owner/repo@<sha> # vX.Y.Z`), never a 
 
 Always look up the actual latest release before pinning — via `gh api repos/<owner>/<repo>/releases/latest` (or `/tags`) — rather than assuming a version from training data.
 
+## Containers
+
+Before running any `docker` command, check whether `podman` is installed (e.g. `command -v podman`). If it is, use `podman` instead (and `podman compose`/`podman-compose` in place of `docker compose`/`docker-compose`).
+
 ## File search scope
 
 Never search for files more than two top-level directories away from the current directory. Never run `find /` or `find` from the user's home directory without specifying a subfolder.
