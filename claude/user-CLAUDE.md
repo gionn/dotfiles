@@ -28,7 +28,9 @@ When pushing additional commits to an already-open PR, check whether they're mor
 
 After raising a draft PR, monitor CI until the first workflow run finishes; on failure, investigate and propose a fix. Once ready for review, watch for review comments, reason about each, and ask me which to address, unless trivial and safe to fix outright.
 
-After pushing review fixes, monitor CI again. If Copilot left more than 3 review comments, request a fresh Copilot review automatically, but only once per PR; after that, ask before requesting another.
+If checks never start (no workflow run appears after a reasonable wait), check whether the PR has merge conflicts with the base branch before assuming anything else. If it does, fix them by merging the updated base branch into the PR branch (not rebasing, unless I ask for that), resolving conflicts, then pushing.
+
+After pushing review fixes, monitor CI again. If Copilot left more than 3 review comments, request a fresh Copilot review automatically, but only once per PR; after that, ask before requesting another. To confirm the re-request actually registered, check the issue timeline for a `review_requested` event naming Copilot (`gh api repos/<owner>/<repo>/issues/<pr>/timeline --jq '.[] | select(.event=="review_requested")'`) — the reviews and requested_reviewers endpoints don't surface an in-progress bot review, so an empty result there doesn't mean the request failed. Don't poll for Copilot's fresh comments once requested; just wait 5 minutes and check once, or wait until I tell you a new review has landed.
 
 ## GitHub PR descriptions
 
