@@ -28,11 +28,11 @@ The title must read as the fix, not as a bug report. "Archive Nexus never gets a
 
 When pushing additional commits to an already-open PR, check whether they're more than a minor tweak (e.g. they change the approach, drop or add scope, fix a mistake in earlier commits on the same PR). If so, update the PR title and description to match what the branch now does — don't leave them describing only the original commits once the PR has drifted from that description. Skip this while the outcome of the new commits is still unknown — e.g. a speculative push just to trigger CI and see what comes back. Update once the result is in and the final state of the branch is clear, not before.
 
-After raising a draft PR, monitor CI until the first workflow run finishes; on failure, investigate and propose a fix. Once ready for review, watch for review comments, reason about each, and ask me which to address, unless trivial and safe to fix outright.
+Once ready for review, watch for review comments, reason about each, and ask me which to address, unless trivial and safe to fix outright.
 
 If checks never start (no workflow run appears after a reasonable wait), check whether the PR has merge conflicts with the base branch before assuming anything else. If it does, fix them by merging the updated base branch into the PR branch (not rebasing, unless I ask for that), resolving conflicts, then pushing.
 
-After pushing review fixes, monitor CI again. If Copilot left more than 3 review comments, request a fresh Copilot review automatically, but only once per PR; after that, ask before requesting another. To confirm the re-request actually registered, check the issue timeline for a `review_requested` event naming Copilot (`gh api repos/<owner>/<repo>/issues/<pr>/timeline --jq '.[] | select(.event=="review_requested")'`) — the reviews and requested_reviewers endpoints don't surface an in-progress bot review, so an empty result there doesn't mean the request failed. Don't poll for Copilot's fresh comments once requested; just wait 5 minutes and check once, or wait until I tell you a new review has landed.
+If Copilot left more than 3 review comments, request a fresh Copilot review automatically, but only once per PR; after that, ask before requesting another. To confirm the re-request actually registered, check the issue timeline for a `review_requested` event naming Copilot (`gh api repos/<owner>/<repo>/issues/<pr>/timeline --jq '.[] | select(.event=="review_requested")'`) — the reviews and requested_reviewers endpoints don't surface an in-progress bot review, so an empty result there doesn't mean the request failed. Don't poll for Copilot's fresh comments once requested — wait until I tell you a new review has landed.
 
 ## GitHub PR descriptions
 
