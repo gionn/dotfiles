@@ -44,7 +44,13 @@ Describe the PR's current end state, not its commit-by-commit evolution. Avoid p
 
 ## Code comments
 
-Write self-documenting code — clear names and structure, not comments explaining them. Delete any comment that doesn't tell the reader something they can't already see in the code, no matter how short — this rules out explaining intent the code already makes obvious, narrating what changed, or comparing to a prior version that's no longer there. The only exception: a genuinely surprising external constraint or footgun a future editor would trip on — and even that gets one physical line, never wrapped. If it doesn't fit on one line, it belongs in the commit message or PR description, not the source.
+Comments only where code needs clarification — never narration.
+
+Average comments should fit one line (80 columns); if really important, 3 lines is the hard limit.
+
+If it doesn't fit in 3 lines, it belongs in the commit message or PR description, not the source.
+
+A comment must never describe a decision's status ("still open", "not yet decided"), reference what a previous version did, or explain why a value differs from an earlier PR — that's history, not a constraint on the code as it stands today, and belongs in the commit message, never the comment.
 
 ## Writing style
 
