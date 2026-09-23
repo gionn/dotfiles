@@ -34,6 +34,8 @@ If checks never start (no workflow run appears after a reasonable wait), check w
 
 If Copilot left more than 3 review comments, request a fresh Copilot review automatically, but only once per PR; after that, ask before requesting another. To confirm the re-request actually registered, check the issue timeline for a `review_requested` event naming Copilot (`gh api repos/<owner>/<repo>/issues/<pr>/timeline --jq '.[] | select(.event=="review_requested")'`) — the reviews and requested_reviewers endpoints don't surface an in-progress bot review, so an empty result there doesn't mean the request failed. Don't poll for Copilot's fresh comments once requested — wait until I tell you a new review has landed.
 
+Once a review thread's concern is actually settled — the code was fixed, or we agreed no change is needed — mark that thread resolved (`gh api graphql -f query='mutation { resolveReviewThread(input: {threadId: "<id>"}) { thread { isResolved } } }'`; thread IDs come from a `reviewThreads` GraphQL query on the PR). Don't resolve a thread just because it's outdated (the diff moved past it) or because I haven't weighed in yet — only once the underlying concern is actually addressed.
+
 ## GitHub PR descriptions
 
 Do not insert manual line breaks within sentences or paragraphs. Write prose as single long lines and let GitHub's renderer wrap automatically. Only use newlines for genuine paragraph breaks, list items, or code blocks.
