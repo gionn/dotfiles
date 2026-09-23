@@ -38,6 +38,14 @@ Once a review thread's concern is actually settled — the code was fixed, or we
 
 ## GitHub PR descriptions
 
+Structure every PR body in three parts, in this order:
+
+1. A 2-3 line summary giving real context — what the PR does and why — not a restatement of the Jira ticket title.
+2. A bullet list of what actually changed. Keep it high-level; file names, class names, or function names may be referenced where useful, but don't turn it into a diff walkthrough.
+3. A checklist of what testing covers.
+
+Write in simple English throughout — short sentences, plain words, no jargon or hedging.
+
 Do not insert manual line breaks within sentences or paragraphs. Write prose as single long lines and let GitHub's renderer wrap automatically. Only use newlines for genuine paragraph breaks, list items, or code blocks.
 
 Do not append a "Generated with Claude Code" footer or any attribution link to PR descriptions.
