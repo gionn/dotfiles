@@ -58,6 +58,16 @@ Describe the PR's current end state, not its commit-by-commit evolution. Avoid p
 
 Before sending any prose I write for you or into a repo — PR descriptions, commit messages, comments, docs — run it through the `humanizer` skill (https://raw.githubusercontent.com/blader/humanizer/refs/heads/main/SKILL.md) to strip AI writing tells, then return only the final text.
 
+## Code comments
+
+- Default to no comment. Comment only for *why* — a non-obvious constraint, deliberate deviation, gotcha, or cross-file sync obligation — never *how* (don't narrate code, restate names/signatures, or mark block ends) and never *what changed* ("fixed X", "as requested" belong in the commit message, not the file — a comment must read fine to someone who never saw the diff).
+- Delete comments that just restate a decision the code already shows, even when they cite a doc — the doc is where a reader would look anyway. Keep inline only the one fact needed at that line that the code can't already tell you.
+- Don't let a comment be a bare pointer — encode the substance, since links/specs/section numbers rot. A maintained doc/README at a stable path is fine, and system-level "why it's built this way" narrative belongs there as its own extraction, not inline. Tickets/Confluence/RFCs are fine as trailing breadcrumbs.
+- Razor every comment you keep to the fewest words for that one fact — cut restated mechanism, downstream consequences, and justification-of-the-justification. A 5-line comment rarely survives intact.
+- A one-line summary on a public function/endpoint is fine; restating a single clear line inline is not.
+- TODOs are fine without issue IDs, but are a marker, not a substitute for doing the work.
+- Before every commit, clean up comments in the changes being committed (per the rules above) — use the `comments` skill for this.
+
 ## Worktrees
 
 When creating a worktree, give it a short descriptive name based on the task (e.g. the Jira ID, or a few kebab-case words summarizing the change) instead of a random/generated name. If there isn't enough context yet to derive a meaningful name, ask rather than autogenerating one.
