@@ -11,10 +11,10 @@ A comment exists for the next human who reads this code, full stop. It is not a 
 
 ## Scope
 
-- No argument: review comments in the current uncommitted diff (`git diff` + `git diff --staged`).
+- No argument: review comments in the current uncommitted diff (`git diff` + `git diff --staged`). If the working tree is clean, fall back to the unpushed commits on the current branch instead (`git diff @{u}..HEAD`; if there's no upstream, diff against the point where the branch left its base, e.g. `git diff main...HEAD`).
 - An argument naming a path, branch, or PR: review comments in that target's diff instead.
 
-If there's no diff to review, say so and stop.
+If there's no diff to review either way, say so and stop.
 
 ## Rules
 
