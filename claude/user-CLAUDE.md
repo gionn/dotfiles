@@ -64,6 +64,21 @@ Describe the PR's current end state, not its commit-by-commit evolution. Avoid "
 
 Before sending any prose I will write for you or into a repo — PR descriptions, commit messages, comments, docs — run it through the `humanizer` skill (https://raw.githubusercontent.com/blader/humanizer/refs/heads/main/SKILL.md) and return only the final text.
 
+## Testing
+
+Work test-first for any code change with a testable effect: bug fixes, new behavior, and refactors that change behavior. Don't spot the bug, write the fix, then add a test after the fact. Follow this order:
+
+1. Write or update the test that captures the expected behavior, before touching the production code.
+2. Run it and confirm it fails, and that it fails for the reason you expect (the assertion that shows the bug or missing behavior), not because of a typo, import error, or broken setup. Show me the failing output.
+3. Apply the smallest code change that makes it pass.
+4. Rerun the test and confirm it passes. Then run the wider relevant suite to check nothing else broke.
+
+When the repo has more than one kind of test (unit, component, integration, e2e), write the red/green test at the most end-to-end level available, unless that suite is too slow or costly to run in this loop. If you aren't sure which level fits, ask me.
+
+If the test passes at step 2, the test is wrong or the bug isn't what you think. Stop and work out which before writing any fix. Never weaken, skip, or delete a test to get to green.
+
+If the repo has no test setup for that code, or the change can't really be tested (docs, pure config, one-off scripts), say so and skip the loop. Don't quietly drop it. If adding a test harness would be a big job, ask me first.
+
 ## Code comments
 
 - Default to no comment. Comment only for *why* — a non-obvious constraint, deliberate deviation, gotcha, or cross-file sync obligation. Never *how* (narrate code, restate names/signatures, mark block ends) and never *what changed* (that belongs in the commit message; a comment must read fine to someone who never saw the diff).
