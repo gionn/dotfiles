@@ -73,7 +73,7 @@ Work test-first for any code change with a testable effect: bug fixes, new behav
 3. Apply the smallest code change that makes it pass.
 4. Rerun the test and confirm it passes. Then run the wider relevant suite to check nothing else broke.
 
-When the repo has more than one kind of test (unit, component, integration, e2e), write the red/green test at the most end-to-end level available, unless that suite is too slow or costly to run in this loop. If you aren't sure which level fits, ask me.
+When the repo has more than one kind of test (unit, component, integration, e2e), write the red/green test at the most end-to-end level available, unless that suite is too slow or costly to run in this loop. If you aren't sure which level fits, ask me. Cover each behavior at one level, not several. Add a second test at a different level only when it checks something the first genuinely can't, such as a unit test for an edge case the e2e path can't reach, not the same behavior restated.
 
 If the test passes at step 2, the test is wrong or the bug isn't what you think. Stop and work out which before writing any fix. Never weaken, skip, or delete a test to get to green.
 
