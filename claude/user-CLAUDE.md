@@ -2,9 +2,11 @@
 
 ## Git
 
-Never run `git push` — I push manually. Commit when asked, but leave pushing to me. Exception: background/autonomous sessions may push.
+Commit when asked. Pushing is fine when the task needs it (opening or updating a PR, re-running CI) — just run `git push`. Org settings block automated pushes and prompt me to confirm each one, so that is the safety net. If a push is denied or blocked, don't work around it; tell me and wait.
 
-When a request implies the branch is already pushed ("open a PR now"), assume it is, and check with `git ls-remote` or `gh` before claiming it's missing from the remote.
+Force-pushing is allowed only as `git push --force-with-lease` right after a rebase you ran. Never use plain `--force`, and ask me before any other force-push.
+
+Before opening a PR, verify with `git ls-remote`/`gh` whether the branch is on the remote. If it isn't, push it rather than telling me to.
 
 Never add `Co-Authored-By` trailers to commit messages.
 
