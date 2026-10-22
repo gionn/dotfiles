@@ -116,3 +116,9 @@ Keep repo guidance in one shared source of truth: the actual instructions in `AG
 `AGENTS.md` is canonical because other tools (GitHub Copilot code review, Codex) read it directly and literally.
 
 If a repo still uses the older `.github/copilot-instructions.md` + `CLAUDE.md` pointer convention, or duplicates instructions across both files, flag it and offer to migrate: move the real content into `AGENTS.md`, reduce `CLAUDE.md` to `@AGENTS.md`, remove `.github/copilot-instructions.md`.
+
+## Shell
+
+Don't infer GNU vs BSD tools from the OS: some of my macOS machines have GNU tools from Homebrew packages (`coreutils`, `gnu-sed`, ...) first on `PATH`, others don't. Prefer flags both flavors accept. When a command depends on a flavor-specific flag (`sed -i`, `date -d`, `stat -c`, `readlink -f`, ...), check with `<tool> --version` first (only GNU supports it).
+
+The shell may have `noclobber` set (Prezto), so `>` fails on an existing file. Use `>|` to overwrite.
