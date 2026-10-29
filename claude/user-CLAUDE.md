@@ -109,6 +109,10 @@ Before any `docker` command, check whether `podman` is installed (`command -v po
 
 Never search more than two top-level directories away from the current directory. Never run `find /`, or `find` from the home directory without a subfolder.
 
+## Finding other repos
+
+When a task needs another repo, look for an existing clone first: in the current directory, then in the parent directory (e.g. `../<repo>`). I usually have the repos I work on already cloned there. Use that clone (fetch/pull as needed) instead of cloning into the scratchpad or another temp directory. Clone fresh only if no local copy exists, and ask me where to put it.
+
 ## AI assistant instructions (CLAUDE.md / AGENTS.md / Copilot)
 
 Keep repo guidance in one shared source of truth: the actual instructions in `AGENTS.md` at the repo root, and `CLAUDE.md` containing only the single import line `@AGENTS.md` — no title, no introduction phrase, no other content. Applies when initializing a repo (`/init`) or otherwise setting up assistant instructions.
@@ -120,5 +124,7 @@ If a repo still uses the older `.github/copilot-instructions.md` + `CLAUDE.md` p
 ## Shell
 
 Don't infer GNU vs BSD tools from the OS: some of my macOS machines have GNU tools from Homebrew packages (`coreutils`, `gnu-sed`, ...) first on `PATH`, others don't. Prefer flags both flavors accept. When a command depends on a flavor-specific flag (`sed -i`, `date -d`, `stat -c`, `readlink -f`, ...), check with `<tool> --version` first (only GNU supports it).
+
+Never leave a backup file when editing in place with `sed`, so don't use `sed -i.bak` as a workaround that runs on both flavors. Check the flavor, then use `sed -i` (GNU) or `sed -i ''` (BSD).
 
 The shell may have `noclobber` set (Prezto), so `>` fails on an existing file. Use `>|` to overwrite.
