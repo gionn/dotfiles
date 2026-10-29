@@ -66,6 +66,8 @@ Describe the PR's current end state, not its commit-by-commit evolution. Avoid "
 
 Before sending any prose I will write for you or into a repo — PR descriptions, commit messages, comments, docs — run it through the `humanizer` skill (https://raw.githubusercontent.com/blader/humanizer/refs/heads/main/SKILL.md) and return only the final text.
 
+In anything posted to GitHub (PR bodies, reviews, comments, issues), write references to another repo's issue or PR as `owner/repo#N`. GitHub only autolinks that form across repos: `repo#N` or a bare `#N` links to the current repo's own number instead.
+
 ## Testing
 
 Work test-first for any code change with a testable effect: bug fixes, new behavior, and refactors that change behavior. Don't spot the bug, write the fix, then add a test after the fact. Follow this order:
