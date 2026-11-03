@@ -27,13 +27,11 @@ Only for repos in the Alfresco or Hyland GitHub orgs.
 
 Always create PRs as drafts.
 
-Title the PR after the problem it solves, not the mechanism used to solve it — "Fix requests timing out under load", not "Add connection pooling to the HTTP client". The implementation belongs in the description's summary; an implementation-flavored title stops describing the change once the implementation changes.
-
-The title must read as the fix, not the bug report. "Archive Nexus never gets a blob-store compaction task" states the bug; "Setup blob-store compaction task" is the fix. When the problem is an absence rather than a malfunction, phrase it around the corrective action (add/fix/setup/remove...), not the missing thing.
+Title the PR after the problem it solves, phrased as the fix, not the mechanism or the bug report. "Fix requests timing out under load", not "Add connection pooling to the HTTP client". The implementation belongs in the description's summary; an implementation-flavored title stops describing the change once the implementation changes. When the problem is an absence rather than a malfunction, phrase it around the corrective action (add/fix/setup/remove...), not the missing thing: "Setup blob-store compaction task", not "Archive Nexus never gets a blob-store compaction task".
 
 For upgrades, version bumps, and migrations there is rarely a bug to name. Title the PR after the target state ("Upgrade EKS clusters to Kubernetes 1.35"), never the old version or what is being left behind ("Move off 1.34"). Only use a problem-style title when there's a concrete one, such as a CVE, a deprecation, or an end-of-support date, and then name that problem.
 
-When follow-up commits change the approach, change the scope, or fix a mistake from an earlier commit on the branch, update the PR title and description to match its current state. Skip this while the outcome is still unknown — e.g. a speculative push to see what CI says — and update once it's clear.
+When follow-up commits change the approach, change the scope, or fix a mistake from an earlier commit on the branch, update the PR title and description to match. Skip this while the outcome is still unknown — e.g. a speculative push to see what CI says — and update once it's clear.
 
 Once ready for review, watch the review comments, reason about each, and ask me which to address. Fix outright only the ones that are trivial and safe.
 
@@ -56,9 +54,9 @@ Structure every PR body in three parts, in this order:
 2. A high-level bullet list of what changed. File, class, and function names are fine where useful; don't turn it into a diff walkthrough.
 3. A checklist of what the testing covers.
 
-Write simple English throughout: short sentences, plain words, no jargon or hedging.
+Write simple English: short sentences, plain words, no jargon or hedging.
 
-No manual line breaks inside sentences or paragraphs — write prose as single long lines and let GitHub wrap. Newlines only for paragraph breaks, list items, and code blocks.
+No manual line breaks inside sentences or paragraphs — write prose as single long lines and let GitHub wrap. Newlines only between paragraphs, list items, and code blocks.
 
 No "Generated with Claude Code" footer or any attribution link.
 
