@@ -130,8 +130,17 @@ If a repo still uses the older `.github/copilot-instructions.md` + `CLAUDE.md` p
 
 ## Shell
 
-Don't infer GNU vs BSD tools from the OS: some of my macOS machines have GNU tools from Homebrew packages (`coreutils`, `gnu-sed`, ...) first on `PATH`, others don't. Prefer flags both flavors accept. When a command depends on a flavor-specific flag (`sed -i`, `date -d`, `stat -c`, `readlink -f`, ...), check with `<tool> --version` first (only GNU supports it).
+My machines differ in OS, shell, and installed tools. Check what is actually there instead of assuming from the OS or from a previous machine.
+
+Don't infer GNU vs BSD tools from the OS: some macOS machines have GNU tools from Homebrew packages (`coreutils`, `gnu-sed`, ...) first on `PATH`, others don't, and Linux may ship busybox instead of GNU. Prefer flags every flavor accepts. When a command depends on a flavor-specific flag (`sed -i`, `date -d`, `stat -c`, `readlink -f`, ...), check with `<tool> --version` first (only GNU supports it).
 
 Never leave a backup file when editing in place with `sed`, so don't use `sed -i.bak` as a workaround that runs on both flavors. Check the flavor, then use `sed -i` (GNU) or `sed -i ''` (BSD).
 
-The shell may have `noclobber` set (Prezto), so `>` fails on an existing file. Use `>|` to overwrite.
+The shell may have `noclobber` set (Prezto), so `>` fails on an existing file. Use `>|` whenever `>` might hit an existing file; it behaves the same when `noclobber` is off.
+
+Find out which shell actually runs the commands before writing loops or variable expansions: the environment block, or `ps -p $$ -o comm=` (`$SHELL` is only the login shell). zsh does not word-split unquoted variables (`$var` stays one argument), bash does. So never rely on splitting in either shell (`for p in "repo 1" ...; do cmd $p`, `set -- $var`, `cmd $flags`). Instead:
+- for a few items, issue separate commands, or parallel tool calls when they are independent
+- for a loop, iterate over an array and pass elements quoted (`for x in "${items[@]}"`), or iterate over a single value and derive the rest from it
+- when a snippet needs specific shell semantics and that shell is installed, run it as `bash -c '...'` or from a script with a `#!/usr/bin/env bash` shebang
+
+If `command -v mise` succeeds, run version-sensitive tools (`python`, `node`, `pre-commit`, ...) as `mise exec -- <command>`, since a shell that hasn't activated mise may have a stale global version on `PATH`.
