@@ -75,13 +75,14 @@ In anything posted to GitHub (PR bodies, reviews, comments, issues), write refer
 Work test-first for any code change with a testable effect: bug fixes, new behavior, and refactors that change behavior. Don't spot the bug, write the fix, then add a test after the fact. Follow this order:
 
 1. Write or update the test that captures the expected behavior, before touching the production code.
-2. Run it and confirm it fails, and that it fails for the reason you expect (the assertion that shows the bug or missing behavior), not because of a typo, import error, or broken setup. Show me the failing output.
-3. Apply the smallest code change that makes it pass.
-4. Rerun the test and confirm it passes. Then run the wider relevant suite to check nothing else broke.
+2. If the code under test doesn't exist yet, first add a stub with the final signature and a deliberately wrong body (throw `not implemented`, or return a neutral default), so the test can import and run. Never run a test whose failure would be a missing module or export.
+3. Run it and confirm it fails, and that it fails for the reason you expect (the assertion that shows the bug or missing behavior). An import error, type error, missing-symbol error, typo, or broken setup is not a valid red: fix the scaffolding and rerun. Show me the failing output.
+4. Apply the smallest code change that makes it pass.
+5. Rerun the test and confirm it passes. Then run the wider relevant suite to check nothing else broke.
 
 When the repo has more than one kind of test (unit, component, integration, e2e), write the red/green test at the most end-to-end level available, unless that suite is too slow or costly to run in this loop. If you aren't sure which level fits, ask me. Cover each behavior at one level, not several. Add a second test at a different level only when it checks something the first genuinely can't, such as a unit test for an edge case the e2e path can't reach, not the same behavior restated.
 
-If the test passes at step 2, the test is wrong or the bug isn't what you think. Stop and work out which before writing any fix. Never weaken, skip, or delete a test to get to green.
+If the test passes at the red step (3), the test is wrong or the bug isn't what you think. Stop and work out which before writing any fix. Never weaken, skip, or delete a test to get to green.
 
 If the repo has no test setup for that code, or the change can't really be tested (docs, pure config, one-off scripts), say so and skip the loop. Don't quietly drop it. If adding a test harness would be a big job, ask me first.
 
