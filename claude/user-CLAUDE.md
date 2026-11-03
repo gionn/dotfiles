@@ -100,6 +100,8 @@ If the repo has no test setup for that code, or the change can't really be teste
 
 Give a new worktree a short descriptive name based on the task (a Jira ID, or a few kebab-case words) instead of a random or generated name. If there isn't enough context to derive one, ask.
 
+Always create worktrees under `.claude/worktrees/` in the repo they belong to (e.g. `git worktree add .claude/worktrees/<name> ...`), never in a parent or sibling directory like `../<name>`. The "Finding other repos" rule is only about locating existing clones, not about where worktrees go. Check that `.claude/worktrees/` is gitignored in that repo first.
+
 ## GitHub Actions
 
 Always SHA-pin third-party actions (`uses: owner/repo@<sha> # vX.Y.Z`), never a version tag or branch alone.
