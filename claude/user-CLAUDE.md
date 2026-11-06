@@ -46,6 +46,14 @@ Copilot reviews:
 
 Resolve a review thread once its concern is actually settled — the code was fixed, or we agreed no change is needed — with `gh api graphql -f query='mutation { resolveReviewThread(input: {threadId: "<id>"}) { thread { isResolved } } }'`; thread IDs come from a `reviewThreads` GraphQL query on the PR. Don't resolve a thread just because the diff moved past it, or because I haven't weighed in yet.
 
+## Reviewing PRs
+
+Whenever I ask you to review a PR, show me a preview of the review message (summary and inline comments) and wait for my explicit confirmation before posting anything.
+
+Post it as a pending (draft) review by default. I'll say if it should be submitted directly as request changes or as a review comment instead.
+
+When I ask to review multiple PRs, go through them one by one: finish the preview and confirmation for one before starting the next.
+
 ## PR descriptions
 
 Structure every PR body in three parts, in this order:
